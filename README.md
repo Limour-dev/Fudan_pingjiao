@@ -4,7 +4,7 @@
 
 3. 下载对应浏览器的webdriver
 
-   以下是常用的浏览器web driver下载地址，下载好了放在和work.py同一文件夹下
+   以下是常用的浏览器web driver下载地址，下载好了解压出来放在和work.py同一文件夹下
 
    [Firefox web driver](https://github.com/mozilla/geckodriver/releases)
    [Chrome web driver](http://chromedriver.storage.googleapis.com/index.html?path=2.0/)
