@@ -20,4 +20,6 @@
 
 5. 命令行中`python3 work.py`运行python脚本
 
-6. 祝大家评教愉快
+6. 不同环境可能会不兼容，我的环境是mac+chrome。如果遇到问题可以发邮件到`llsun@fudan.edu.cn`
+
+7. 祝大家评教愉快
