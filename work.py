@@ -1,14 +1,31 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
+
+
+'''
+print("请输入uis用户名") 
+usrname = input()
+print("请输入uis密码")
+password = input()
+'''
+
+usrname = ''
+password = ''
+
 driver = webdriver.Chrome()
 url = "http://ce.fudan.edu.cn"
+
 driver.get(url)
 usr = driver.find_element_by_id('username')
 pwd = driver.find_element_by_id('password')
 submit = driver.find_element_by_id('idcheckloginbtn')
-usr.send_keys('')   #填入uis用户名
-pwd.send_keys('')   #填入uis密码
+
+usr.send_keys(usrname)   #填入uis用户名
+pwd.send_keys(password)   #填入uis密码
+
+
+
 submit.click()
 #driver.get("http://ce.fudan.edu.cn/q.aspx?id=9957450&beginTime=2020-04-24%2015:00&endTime=2020-06-20%2023:59&previewTime=2020-03-22%2008:00%20&sqid=b956f4a567ed4ab982a7aede07a4a6da&type=5&stepseq=45ff583eeca240959051a0bf2f11efee&targettype=2&targetcode=869a78ece4374719a3ee006f8661746b&tag=b956f4a567ed4ab982a7aede07a4a6da_5_869a78ece4374719a3ee006f8661746b_2_2019-2020-2-COMP130154_0_9957450&name=2020%E5%B9%B4%E6%98%A5%E5%AD%A3%E5%AD%A6%E6%9C%9F%E7%90%86%E8%AE%BA%E8%AF%BE%E8%AF%84%E6%95%99-%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86")
 

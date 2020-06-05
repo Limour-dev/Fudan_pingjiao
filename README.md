@@ -17,8 +17,8 @@
 5. 用文本编辑器打开work.py文件（如果是windows就右键-打开方式-记事本），找到下面两行代码
 
    ```c++
-   usr.send_keys('')
-   pwd.send_keys('')
+   username = ''
+   password = ''
    ```
 
    引号内分别填入uis用户名和密码
