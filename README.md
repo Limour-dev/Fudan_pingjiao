@@ -1,4 +1,4 @@
-1. 安装python3
+1. 安装python3（已上传可执行文件版本，无需安装python3，如有需要请移步[releases](https://github.com/hohboy/Fudan_pingjiao/releases)，但仍需配置chromedriver，配置方法参考本文档第$4$点
 
 2. 命令行下`pip3 install selenium`安装selenium
 
