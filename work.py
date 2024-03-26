@@ -73,7 +73,7 @@ while 1 :
             print('here')
             i.send_keys(Keys.ENTER)
 
-    #time.sleep(200)
+    time.sleep(2)  # adapt to network quality
 
     driver.close()
     driver.switch_to_window(driver.window_handles[0])
