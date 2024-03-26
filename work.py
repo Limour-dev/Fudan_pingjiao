@@ -39,18 +39,22 @@ while 1 :
     a.click()
     time.sleep(2)
     driver.switch_to_window(driver.window_handles[1])
-    radios = driver.find_elements_by_class_name('jqTransformRadioWrapper')
-    checkboxes = driver.find_elements_by_class_name('jqTransformCheckboxWrapper')
-    cnt = 0
-    for i in reversed(radios):
-        if i.is_displayed() :
-            i.click()
+    clicked_ratios = []
+    for _ in range(3):
+        radios = driver.find_elements_by_class_name('jqTransformRadioWrapper')
+        checkboxes = driver.find_elements_by_class_name('jqTransformCheckboxWrapper')
+        cnt = 0
+        for i in reversed(radios):
+            if i.is_displayed() :
+                if i not in clicked_ratios:
+                    i.click()
+                    clicked_ratios.append(i)
 
     for i in checkboxes :
         if i.is_displayed() :
             cnt = cnt + 1
             i.click()
-        if cnt >= 8 : break
+        if cnt >= 800 : break
 
 
     text = driver.find_elements_by_tag_name('textarea')
@@ -58,13 +62,18 @@ while 1 :
         i.send_keys('好')
 
     button = driver.find_element_by_id('next_button')
-    button.click()
+    try:
+        button.click()
+    except:
+        pass
 
     buttons = driver.find_elements_by_tag_name('button')
     for i in buttons :
         if i.get_attribute('data-id')=='ok' : 
             print('here')
             i.send_keys(Keys.ENTER)
+
+    time.sleep(2)  # adapt to network quality
 
     driver.close()
     driver.switch_to_window(driver.window_handles[0])
