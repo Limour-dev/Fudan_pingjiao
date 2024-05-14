@@ -37,5 +37,5 @@ jobs:
       run: |
         pip install selenium
     - name: Execute
-      run：|
+      run: |
         username='${{ secrets.username }}' password='${{ secrets.password }}' python work_github_action.py
