@@ -1,20 +1,35 @@
-1. 安装python3（已上传可执行文件版本，无需安装python3，如有需要请移步[releases](https://github.com/hohboy/Fudan_pingjiao/releases)，但仍需配置chromedriver，配置方法参考本文档第$4$点
+# 方法一：使用 Nix 环境运行（推荐）
 
-2. 命令行下`pip3 install selenium`安装selenium
+> [!TIP]
+> 由于不同用户的环境差别很大，我没办法一一进行测试。这种情况下，最好的方法就是用 Nix，因为它可以确保这个评教脚本无论在什么环境下都可用（包括 WSLg）。
+
+1. 克隆本仓库
+2. 用文本编辑器打开work.py文件，找到下面两行代码
+
+   ```c++
+   username = ''
+   password = ''
+   ```
+
+   引号内分别填入uis用户名和密码
+3. 在 shell 中执行 `nix-shell`
+4. 执行 `python3 work.py`
+
+# 方法二：手动配置
+
+1. 安装python3
+
+2. 命令行下`pip3 install -r requirements.txt`安装selenium
 
 3. 在clone或者下载本项目获得work.py（python脚本）
 
-4. 下载对应浏览器的webdriver
+4. 下载对应浏览器以及webdriver
 
-   以下是chrome的浏览器webdriver下载地址，选择和自己chrome对应版本的chromedriver（可以再chrome浏览器网址栏中输入`chrome://version`查看，下载好了把里面的东西解压出来：
+   ```bash
+   sudo apt install chromium-chromedriver
+   ```
 
-   * mac系统： 放在和work.py同一文件夹下
-   * linux系统：在终端中进入解压出来的东西所在文件夹下，执行命令`sudo mv chromedriver /usr/local/chromedriver`
-   * win系统：https://www.jianshu.com/p/28c0d1ed62f8
-
-   [Chrome web driver](http://chromedriver.storage.googleapis.com/index.html)
-
-5. 用文本编辑器打开work.py文件（如果是windows就右键-打开方式-记事本），找到下面两行代码
+5. 用文本编辑器打开work.py文件，找到下面两行代码
 
    ```c++
    username = ''
@@ -23,8 +38,10 @@
 
    引号内分别填入uis用户名和密码
 
-6. 命令行中`python3 work.py`运行python脚本
+6. 执行 `python3 work.py`
 
-7. 不同环境可能会不兼容，我的环境是mac，在linux也测试过，目前都只支持chrome浏览器。如果遇到问题可以发邮件到`llsun18@fudan.edu.cn`
+7. 命令行中`python3 work.py`运行python脚本
 
-8. 祝大家评教愉快
+8. 不同环境可能会不兼容，我的环境是 Ubuntu 23.10 。如果遇到问题可以尝试方法一
+
+9. 祝大家评教愉快
